@@ -4,6 +4,7 @@ import RuleBasedModels
 import epitran
 import random
 import pickle
+import json
 
 class TextDataset():
     def __init__(self, table, language='-'):
@@ -77,7 +78,6 @@ def lambda_handler(event, context):
               'transcript_translation': translated_trascript}
 
     return json.dumps(result)
-
 
 def getSentenceCategory(sentence) -> int:
     number_of_words = len(sentence.split())
